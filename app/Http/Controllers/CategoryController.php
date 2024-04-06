@@ -10,12 +10,12 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view("category.index", compact("categories"));
+        return view("admin.category.index", compact("categories"));
     }
 
     public function create()
     {
-        return view("category.form");
+        return view("admin.category.form");
     }
 
     public function store(CategoryRequest $request)
@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view("category.form", compact("category"));
+        return view("admin.category.form", compact("category"));
     }
 
     public function update(CategoryRequest $request, Category $category)
