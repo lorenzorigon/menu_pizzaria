@@ -7,7 +7,12 @@
     },
     "devDependencies": {
         "axios": "^1.6.4",
+        "laravel-mix": "^6.0.49",
         "laravel-vite-plugin": "^1.0",
+        "sass": "^1.74.1",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.3"
     }
 }
