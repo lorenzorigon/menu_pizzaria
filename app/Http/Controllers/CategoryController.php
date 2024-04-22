@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(10);
         return view("admin.category.index", compact("categories"));
     }
 
@@ -20,9 +20,25 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $request)
     {
-        Category::create($request->validated());
+        $validated = $request->validated();
+
+        if ($request->hasFile('image')) {
+            // ta errado ainda kk
+            $imagePath = $request->file('image')->store('public');
+            $imagePath = explode('/',$imagePath);
+
+            $imagePath = $imagePath[1];
+
+            Category::create([
+                'name' => $validated['name'],
+                'image' => $imagePath,
+                'active' => $validated['active']
+            ]);
+        }
+
         return redirect()->route("categories.index");
     }
+
 
     public function edit($id)
     {
@@ -38,7 +54,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        $category->delete();    
+        $category->delete();
         return redirect()->route("categories.index");
     }
 }

@@ -12,7 +12,8 @@ class CategoryRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return Auth::check();
+        return true;
+        // return Auth::check();
     }
 
     /**
@@ -24,7 +25,8 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name'  => 'required',
-            'photo' => 'required',
+            'image' => 'required|file',
+            'active' => 'required|boolean'
         ];
     }
 
@@ -32,7 +34,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'O nome é obrigatório.',
-            'photo.required' => 'A foto é obrigatória.',
+            'image.required' => 'A imagem é obrigatória.',
         ];
     }
 }
