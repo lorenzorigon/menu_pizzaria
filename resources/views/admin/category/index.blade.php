@@ -17,13 +17,13 @@
             <tbody>
                 @foreach ($categories as $category)
                     <tr>
-                        <td class="align-middle"><img src="{{ asset('img/categories/'.$category->image) }}" alt="{{ $category->name }}"
+                        <td class="align-middle"><img src="{{ asset($category->image) }}" alt="{{ $category->name }}"
                             class="img-thumbnail" style="height: 100px; width:150px; object-fit:cover"></td>
                         <td class="align-middle">{{ $category->name }}</td>
                         <td class="align-middle">{{ $category->position}}</td>
                         <td class="align-middle">{{ $category->active ? 'Ativo' : 'Inativo' }}</td>
                         <td class="align-middle">
-                            <a href="{{ route('categories.edit', ['id' => $category->id]) }}" class="btn btn-warning"><i
+                            <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-warning"><i
                                     class="material-icons" style="font-size: 16px">edit</i> Editar</a>
                             <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST"
                                 class="d-inline-block mb-0">

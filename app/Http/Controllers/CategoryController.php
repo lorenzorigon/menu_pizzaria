@@ -4,52 +4,45 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Http\Requests\CategoryRequest;
+use App\Services\Category\CategoryService;
+use App\Services\Category\Data\CategoryData;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function __construct(
+        private readonly CategoryService $categoryService,
+    ) {
+    }
+    public function index() : View
     {
         $categories = Category::paginate(10);
         return view("admin.category.index", compact("categories"));
     }
 
-    public function create()
+    public function create() : View
     {
         return view("admin.category.form");
     }
 
-    public function store(CategoryRequest $request)
+    public function store(CategoryRequest $request) : RedirectResponse
     {
-        $validated = $request->validated();
+        $dto = CategoryData::fromRequest($request);
 
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $requestImage = $request->image;
-            $extension = $requestImage->extension();
-            
-            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") .'.'. $extension;
-           
-            $requestImage->move(public_path('img/categories'), $imageName);
-
-            Category::create([
-                'name' => $validated['name'],
-                'image' => $imageName,
-                'active' => $validated['active']
-            ]);
-        }
+        $this->categoryService->create($dto);
 
         return redirect()->route("categories.index");
     }
 
 
-    public function edit($id)
+    public function edit(Category $category) : View
     {
-        $category = Category::findOrFail($id);
         return view("admin.category.form", compact("category"));
     }
 
-    public function update(CategoryRequest $request, $id)
+    public function update(CategoryRequest $request, $id) : RedirectResponse
     {
         $validated = $request->validated();
 
@@ -73,7 +66,7 @@ class CategoryController extends Controller
         return redirect()->route("categories.index");
     }
 
-    public function destroy(Category $category)
+    public function destroy(Category $category) : RedirectResponse
     {
         $category->delete();
         return redirect()->route("categories.index");

@@ -4,7 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 
+/**
+ * @property string $name
+ * @property UploadedFile $image
+ * @property boolean $active
+ * @property integer $position
+ */
 class Category extends Model
 {
     use HasFactory;
@@ -13,6 +20,7 @@ class Category extends Model
         "name",
         "image",
         "active",
+        "position",
     ];
 
     public static function boot()

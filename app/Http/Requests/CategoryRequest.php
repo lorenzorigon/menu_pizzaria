@@ -26,7 +26,8 @@ class CategoryRequest extends FormRequest
         return [
             'name'  => 'required',
             'image' => 'sometimes|file',
-            'active' => 'required|boolean'
+            'active' => 'required|boolean',
+            'position' => 'required|integer',
         ];
     }
 
@@ -35,6 +36,7 @@ class CategoryRequest extends FormRequest
         return [
             'name.required' => 'O nome é obrigatório.',
             'image.required' => 'A imagem é obrigatória.',
+            'position.required' => 'A posição é obrigatória.'
         ];
     }
 }

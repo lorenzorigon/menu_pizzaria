@@ -35,7 +35,8 @@
 
             <div class="form-group mt-3 w-50">
                 <label for="image">Foto</label>
-                <input type="file" class="form-control" id="inputImage" name="image" accept="image/*">
+                <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="previewImage(event)">
+                <img id="imagePreview" src="#" alt="Imagem selecionada" style="width:50px; display:none"/>
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -63,5 +64,13 @@
     </style>
 @endsection
 <script defer>
-    
+    function previewImage(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('imagePreview');
+        output.src = reader.result;
+        output.style.display = 'block';
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
 </script>
