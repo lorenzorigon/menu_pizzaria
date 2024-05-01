@@ -43,8 +43,15 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <img src="{{ asset($category->image) }}" 
-                        alt="{{ $category->name }}"
+                    <img id="imagePreview"
+                        @isset($category) 
+                            src="{{ asset($category->image) }}"
+                            alt="{{ $category->name }}"
+                        @else 
+                            src="{{ asset('img/placeholder-image.png') }}"
+                            alt="Escolha uma imagem"
+                        @endisset 
+                        
                         class="img-thumbnail mt-4" 
                         style="height: 100px; width:150px; object-fit:cover">
                 </div>
