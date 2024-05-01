@@ -17,7 +17,7 @@
 
             <div class="form-group mt-3">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name"
+                <input type="text" class="form-control" id="name" name="name" required
                     value="{{ old('name', isset($category) ? $category->name : '') }}">
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -28,14 +28,14 @@
                 <div class="col-6 row">
                     <div class="col-12">
                         <label for="image">Foto</label>
-                        <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="previewImage(event)">
+                        <input @empty($category) required @endempty type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="previewImage(event)">
                         @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col-12">
                         <label for="position">Posição</label>
-                        <input type="number" class="form-control" id="position" name="position"
+                        <input type="number" class="form-control" id="position" name="position" required
                             value="{{ old('position', isset($category) ? $category->position : '') }}">
                         @error('position')
                             <div class="alert alert-danger">{{ $message }}</div>

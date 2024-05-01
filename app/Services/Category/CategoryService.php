@@ -35,14 +35,18 @@ class CategoryService
     {
         $image = $data->image;
         $oldPath = $category->image;
-        $newPath = $this->storageService->store($image, self::IMAGE_PATH);
+
+        if($image){
+            $newPath = $this->storageService->store($image, self::IMAGE_PATH);
+            $this->storageService->delete($oldPath);
+        }
+
         $position = $this->getNewPosition($data->position);
 
-        $this->storageService->delete($oldPath);
 
         $category->update([
             'name'=> $data->name,
-            'image'=> $newPath,
+            'image'=> $newPath ?? $category->image,
             'active' => $data->active,
             'position' => $position,
         ]);

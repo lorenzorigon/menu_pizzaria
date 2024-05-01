@@ -9,7 +9,7 @@ class CategoryData
 {
     public function __construct(
         public readonly string $name,
-        public readonly UploadedFile $image,
+        public readonly ?UploadedFile $image = null,
         public readonly ?int $position = null,
         public readonly bool $active = true,
     ) {
@@ -21,7 +21,7 @@ class CategoryData
         
         return new self(
             name: $validated['name'],
-            image: $validated['image'],
+            image: $validated['image'] ?? null,
             position: $validated['position'],
             active: (bool) $validated['active'],
         );
