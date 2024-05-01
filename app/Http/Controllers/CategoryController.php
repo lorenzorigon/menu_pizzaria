@@ -44,12 +44,9 @@ class CategoryController extends Controller
         return view("admin.category.form", compact("category"));
     }
 
-    /** @var Category $category */
-    public function update(CategoryRequest $request, int $id) : RedirectResponse
+    public function update(CategoryRequest $request, Category $category) : RedirectResponse
     {
         $dto = CategoryData::fromRequest($request);
-        /** @var Category $category */
-        $category = Category::query()->findOrFail($id);
 
         $this->categoryService->update($dto, $category);
 
@@ -59,7 +56,7 @@ class CategoryController extends Controller
     public function destroy(Category $category) : RedirectResponse
     {
         $this->storageService->delete($category->image);
-        
+       
         $category->delete();
           
         return redirect()->route("categories.index");

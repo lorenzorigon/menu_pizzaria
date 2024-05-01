@@ -8,7 +8,7 @@
     @endisset
     <div class="container w-50">
         <form method="POST"
-            action="{{ isset($category) ?route('categories.update', ['id' => $category->id]) : route('categories.store') }}"
+            action="{{ isset($category) ?route('categories.update', ['category' => $category->id]) : route('categories.store') }}"
             enctype="multipart/form-data">
             @csrf
             @if (isset($category))
