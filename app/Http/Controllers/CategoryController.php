@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
         $this->categoryService->create($dto);
 
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 
 
@@ -50,7 +50,7 @@ class CategoryController extends Controller
 
         $this->categoryService->update($dto, $category);
 
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 
     public function destroy(Category $category) : RedirectResponse
@@ -59,6 +59,6 @@ class CategoryController extends Controller
        
         $category->delete();
           
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 }

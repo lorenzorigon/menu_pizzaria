@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="text-center">Lista de categorias</h1>
     <div class="container mt-5">
-        <a href="{{ route('categories.create') }}" class="btn btn-primary">Cadastrar</a>
+        <a href="{{ route('admin.categories.create') }}" class="btn btn-primary">Cadastrar</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
@@ -23,9 +23,9 @@
                         <td class="align-middle">{{ $category->position}}</td>
                         <td class="align-middle">{{ $category->active ? 'Ativo' : 'Inativo' }}</td>
                         <td class="align-middle">
-                            <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-warning"><i
+                            <a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}" class="btn btn-warning"><i
                                     class="material-icons" style="font-size: 16px">edit</i> Editar</a>
-                            <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST"
+                            <form action="{{ route('admin.categories.destroy', ['category' => $category->id]) }}" method="POST"
                                 class="d-inline-block mb-0">
                                 @csrf
                                 @method('DELETE')

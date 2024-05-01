@@ -5,7 +5,6 @@ namespace App\Services\Category;
 use App\Services\Category\Data\CategoryData;
 use App\Models\Category;
 use App\Services\Storage\StorageService;
-use Illuminate\Http\UploadedFile;
 
 class CategoryService
 {
