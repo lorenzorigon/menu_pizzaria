@@ -24,24 +24,31 @@
                 @enderror
             </div>
 
-            <div class="form-group mt-3 w-50">
-                <label for="position">Posição</label>
-                <input type="number" class="form-control" id="position" name="position"
-                    value="{{ old('position', isset($category) ? $category->position : '') }}">
-                @error('position')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+            <div class="form-group mt-3 row align-items-center">
+                <div class="col-6 row">
+                    <div class="col-12">
+                        <label for="image">Foto</label>
+                        <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="previewImage(event)">
+                        @error('image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col-12">
+                        <label for="position">Posição</label>
+                        <input type="number" class="form-control" id="position" name="position"
+                            value="{{ old('position', isset($category) ? $category->position : '') }}">
+                        @error('position')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img src="{{ asset($category->image) }}" 
+                        alt="{{ $category->name }}"
+                        class="img-thumbnail mt-4" 
+                        style="height: 100px; width:150px; object-fit:cover">
+                </div>
             </div>
-
-            <div class="form-group mt-3 w-50">
-                <label for="image">Foto</label>
-                <input type="file" class="form-control" id="inputImage" name="image" accept="image/*" onchange="previewImage(event)">
-                <img id="imagePreview" src="#" alt="Imagem selecionada" style="width:50px; display:none"/>
-                @error('image')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
             <div class="form-check mt-3">
                 <input type="hidden" name="active" value="0">
                 <input class="form-check-input" type="checkbox" id="active" name="active" value="1" checked>
