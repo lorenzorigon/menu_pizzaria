@@ -31,9 +31,23 @@ class CategoryService
         ]);
     }
 
-    public function update()
+    public function update(CategoryData $data, Category $category) : Category
     {
+        $image = $data->image;
+        $oldPath = $category->image;
+        $newPath = $this->storageService->store($image, self::IMAGE_PATH);
+        $position = $this->getNewPosition($data->position);
 
+        $this->storageService->delete($oldPath);
+
+        $category->update([
+            'name'=> $data->name,
+            'image'=> $newPath,
+            'active' => $data->active,
+            'position' => $position,
+        ]);
+        
+        return $category;
     }
 
     private function getNewPosition(int $position): int

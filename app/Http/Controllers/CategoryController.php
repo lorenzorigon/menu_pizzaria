@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Http\Requests\CategoryRequest;
 use App\Services\Category\CategoryService;
 use App\Services\Category\Data\CategoryData;
+use App\Services\Storage\StorageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
@@ -14,6 +15,7 @@ class CategoryController extends Controller
 {
     public function __construct(
         private readonly CategoryService $categoryService,
+        private readonly StorageService $storageService,
     ) {
     }
     public function index() : View
@@ -42,33 +44,24 @@ class CategoryController extends Controller
         return view("admin.category.form", compact("category"));
     }
 
-    public function update(CategoryRequest $request, $id) : RedirectResponse
+    /** @var Category $category */
+    public function update(CategoryRequest $request, int $id) : RedirectResponse
     {
-        $validated = $request->validated();
+        $dto = CategoryData::fromRequest($request);
+        /** @var Category $category */
+        $category = Category::query()->findOrFail($id);
 
-        $category = Category::findOrFail($id);
-
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old image
-            File::delete(public_path('img/categories/' . $category->image));
-
-            // Save new image
-            $requestImage = $request->image;
-            $extension = $requestImage->extension();
-            $imageName = md5($requestImage->getClientOriginalName()) . strtotime("now") .'.'. $extension;
-            $requestImage->move(public_path('img/categories'), $imageName);
-
-            $validated['image'] = $imageName;
-        }
-
-        $category->update($validated);
+        $this->categoryService->update($dto, $category);
 
         return redirect()->route("categories.index");
     }
 
     public function destroy(Category $category) : RedirectResponse
     {
+        $this->storageService->delete($category->image);
+        
         $category->delete();
+          
         return redirect()->route("categories.index");
     }
 }
