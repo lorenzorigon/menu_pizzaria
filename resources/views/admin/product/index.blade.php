@@ -17,8 +17,9 @@
         <tbody>
             @foreach ($products as $product)
                 <tr>
-                    <td class="align-middle">{{ $product->nome }}</td>
-                    <td class="align-middle">{{ $product->position}}</td>
+                    <td class="align-middle">{{ $product->name }}</td>
+                    <td class="align-middle">{{ $product->price}},00</td>
+                    <td class="align-middle">{{ $product->category->name}}</td>
                     <td class="align-middle">{{ $product->active ? 'Ativo' : 'Inativo' }}</td>
                     <td class="align-middle">
                         <a href="{{ route('admin.products.edit', ['product' => $product->id]) }}" class="btn btn-warning"><i

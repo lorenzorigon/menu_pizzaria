@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->float('price');
+            $table->float('active');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 

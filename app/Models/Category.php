@@ -23,13 +23,8 @@ class Category extends Model
         "position",
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($category) {
-            $lastCategory = Category::orderBy('position', 'desc')->first();
-            $category->position = is_null($lastCategory) ? 1 : $lastCategory->position + 1;
-        });
+    /**@property Collection<int, Product> $products*/
+    public function products(){
+        return $this->hasMany(Product::class);
     }
 }

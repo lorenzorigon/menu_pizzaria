@@ -23,14 +23,21 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required',
+            'description' => 'required',
             'price' => 'required',
+            'category_id' => 'required',
+            'active' => 'required|boolean',
         ];
     }
 
     public function messages(): array
     {
         return [
+            'name.required' => 'O nome é obrigatório.',
+            'description.required' => 'A descrição é obrigatório.',
             'price.required' => 'O preço é obrigatório.',
+            'category_id.required' => 'Selecione a categoria.',
         ];
     }
 }

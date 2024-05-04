@@ -7,7 +7,11 @@ use App\Http\Requests\ProductRequest;
 class ProductData
 {
     public function __construct(
-        //variables
+        public readonly string $name,
+        public readonly string $description,
+        public readonly int $category_id,
+        public readonly float $price,
+        public readonly bool $active = true,
     ) {
     }
 
@@ -16,7 +20,11 @@ class ProductData
         $validated = $request->validated();
         
         return new self(
-            //variables
+            name: $validated['name'],
+            description: $validated['description'],
+            category_id: $validated['category_id'],
+            price: $validated['price'],
+            active: (bool) $validated['active'],
         );
     }
 }

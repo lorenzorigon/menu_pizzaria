@@ -17,7 +17,7 @@
 
             <div class="form-group mt-3 col-6">
                 <label for="category">Categoria</label>
-                <select class="form-select" name="category" id="category">
+                <select class="form-select" name="category_id" id="category">
                     <option value="" selected disabled style="display: none;">Selecione uma categoria</option>
                     @foreach ($categories as $category)
                         <option
@@ -35,7 +35,6 @@
             <div class="form-group mt-3">
                 <label for="name">Nome</label>
                 <input type="text" class="form-control" id="name" name="name" required
-                    placeholder="Digite o nome"
                     value="{{ old('name', isset($product) ? $product->name : '') }}">
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -45,7 +44,6 @@
             <div class="form-group mt-3">
                 <label for="description">Descrição</label>
                 <input type="text" class="form-control" id="description" name="description" required
-                    placeholder="Digite a descrição"
                     value="{{ old('description', isset($product) ? $product->description : '') }}">
                 @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -55,7 +53,7 @@
             <div class="form-group mt-3">
                 <label for="price">Preço</label>
                 <div class="input-group w-25 mb-3">
-                    <input type="number" class="form-control" placeholder="20"
+                    <input type="number" class="form-control" name="price"
                         value="{{ old('price', isset($product) ? $product->price : '') }}">
                     <span class="input-group-text">,00</span>
                 </div>
@@ -76,13 +74,4 @@
         </form>
 
     </div>
-    <style>
-        select.form-select {
-            color: #999;
-        }
-
-        select.form-select option {
-            color: #000;
-        }
-    </style>
 @endsection
