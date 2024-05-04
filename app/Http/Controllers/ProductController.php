@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index() : View
     {
-        //
+        $products = Product::paginate(10);
+        return view("admin.product.index", compact("products"));
     }
 
-    public function create()
+    public function create() : View
     {
-        //
+        return view("admin.product.form", ["categories" => Category::all()]);
     }
 
     public function store(ProductRequest $request)

@@ -23,7 +23,7 @@
                         <a class="nav-link" href="{{route('admin.categories.index')}}">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Produtos</a>
+                        <a class="nav-link" href="{{route('admin.products.index')}}">Produtos</a>
                     </li>
                 </ul>
             </div>

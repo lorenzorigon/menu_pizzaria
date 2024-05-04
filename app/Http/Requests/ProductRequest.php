@@ -11,7 +11,8 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
+        //return Auth::check();
     }
 
     /**
@@ -22,7 +23,14 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'price' => 'required',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'price.required' => 'O preço é obrigatório.',
         ];
     }
 }
