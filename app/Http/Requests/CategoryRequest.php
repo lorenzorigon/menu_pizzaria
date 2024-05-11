@@ -28,6 +28,10 @@ class CategoryRequest extends FormRequest
             'image' => 'sometimes|file',
             'active' => 'required|boolean',
             'position' => 'required|integer',
+            'size' => 'required|boolean',
+            'size_m' => 'required_if:size,true',
+            'size_g' => 'required_if:size,true',
+            'size_gg' => 'required_if:size,true',
         ];
     }
 

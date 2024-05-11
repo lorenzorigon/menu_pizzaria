@@ -10,7 +10,7 @@ class ProductData
         public readonly string $name,
         public readonly string $description,
         public readonly int $category_id,
-        public readonly float $price,
+        public readonly ?float $price = 0.0,
         public readonly bool $active = true,
     ) {
     }

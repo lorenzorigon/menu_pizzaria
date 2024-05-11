@@ -10,6 +10,7 @@
                     <th scope="col" class="align-middle">Imagem</th>
                     <th scope="col" class="align-middle">Nome</th>
                     <th scope="col" class="align-middle">Posição</th>
+                    <th scope="col" class="align-middle">Tamanho | Porções</th>
                     <th scope="col" class="align-middle">Status</th>
                     <th scope="col" class="align-middle">Ações</th>
                 </tr>
@@ -21,6 +22,7 @@
                             class="img-thumbnail" style="height: 100px; width:150px; object-fit:cover"></td>
                         <td class="align-middle">{{ $category->name }}</td>
                         <td class="align-middle">{{ $category->position}}</td>
+                        <td class="align-middle">{{ $category->size ? 'Sim' : 'Não' }}</td>
                         <td class="align-middle">{{ $category->active ? 'Ativo' : 'Inativo' }}</td>
                         <td class="align-middle">
                             <a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}" class="btn btn-warning"><i

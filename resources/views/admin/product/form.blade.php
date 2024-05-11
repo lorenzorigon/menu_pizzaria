@@ -22,11 +22,12 @@
                     @foreach ($categories as $category)
                         <option
                             {{ (old('category') == $category->id ? 'selected' : (isset($product) && $product->category_id == $category->id ? 'selected' : '')) }} 
-                            value="{{$category->id}}">
+                            value="{{$category->id}}"
+                            data-size="{{$category->size}}">
                             {{$category->name}}
                         </option>
                     @endforeach
-                </select>
+                </select>                
                 @error('category')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -50,7 +51,7 @@
                 @enderror
             </div>
 
-            <div class="form-group mt-3">
+            <div id="price-group" class="form-group mt-3">
                 <label for="price">Preço</label>
                 <div class="input-group w-25 mb-3">
                     <input type="number" class="form-control" name="price"
@@ -75,3 +76,17 @@
 
     </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#category').change(function(){
+        var selectedCategorySize = $(this).children("option:selected").data('size');
+        if(selectedCategorySize){
+            $('#price-group').hide();
+        } else {
+            $('#price-group').show();
+        }
+    });
+});
+</script>
+

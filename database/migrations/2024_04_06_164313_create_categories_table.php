@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->boolean('active');
+            $table->boolean('size');
+            $table->float('size_m')->nullable();
+            $table->float('size_g')->nullable();
+            $table->float('size_gg')->nullable();
             $table->integer('position');
             $table->timestamps();
         });

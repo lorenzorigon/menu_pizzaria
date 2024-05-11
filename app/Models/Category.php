@@ -11,6 +11,10 @@ use Illuminate\Http\UploadedFile;
  * @property UploadedFile $image
  * @property boolean $active
  * @property integer $position
+ * @property boolean $size
+ * @property float $size_m
+ * @property float $size_g
+ * @property float $size_gg
  */
 class Category extends Model
 {
@@ -21,6 +25,10 @@ class Category extends Model
         "image",
         "active",
         "position",
+        "size",
+        "size_m",
+        "size_g",
+        "size_gg"
     ];
 
     /**@property Collection<int, Product> $products*/

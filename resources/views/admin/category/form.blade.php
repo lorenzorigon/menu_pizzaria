@@ -56,6 +56,45 @@
                         style="height: 100px; width:150px; object-fit:cover">
                 </div>
             </div>
+
+            <div class="form-check mt-3">
+                <input type="hidden" name="size" value="0">
+                <input class="form-check-input" type="checkbox" id="size" name="size" value="1"
+                @if (isset($category) && $category->size)
+                    checked
+                @endif
+                >
+                <label class="form-check-label" for="size">Porção</label>
+                @error('size')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div id="sizes-container" 
+                class="row g-3" 
+                @empty($category) hidden @endempty
+                @if (isset($category) && !$category->size) hidden @endif
+            >
+                <div class="col-md-2">
+                    <label for="size_m" class="form-label">M</label>
+                    <input type="number" name="size_m" class="form-control" id="size_m"
+                        value="{{ old('size_m', isset($category) ? $category->size_m : '') }}"
+                    >
+                </div>
+                <div class="col-md-2">
+                    <label for="size_g" class="form-label">G</label>
+                    <input type="number" name="size_g" class="form-control" id="g"
+                        value="{{ old('size_g', isset($category) ? $category->size_g : '') }}"    
+                    >
+                </div>
+                <div class="col-md-2">
+                    <label for="size_gg" class="form-label">GG</label>
+                    <input type="number" name="size_gg" class="form-control" id="gg"
+                        value="{{ old('size_gg', isset($category) ? $category->size_gg : '') }}"
+                    >
+                </div>
+            </div>
+
             <div class="form-check mt-3">
                 <input type="hidden" name="active" value="0">
                 <input class="form-check-input" type="checkbox" id="active" name="active" value="1" checked>
@@ -77,14 +116,26 @@
         }
     </style>
 @endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script defer>
     function previewImage(event) {
-    var reader = new FileReader();
-    reader.onload = function(){
-        var output = document.getElementById('imagePreview');
-        output.src = reader.result;
-        output.style.display = 'block';
-    };
-    reader.readAsDataURL(event.target.files[0]);
-}
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    $(document).ready(function(){
+        $('#size').change(function(){
+            
+            if(this.checked){
+                $('#sizes-container').removeAttr('hidden');
+            }else{
+                $('#sizes-container').attr('hidden', 'hidden'); 
+            }
+        })
+    });
 </script>

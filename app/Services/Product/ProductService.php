@@ -14,7 +14,7 @@ class ProductService
             'name' => $data->name,
             'description' => $data->description,
             'category_id' => $data->category_id,
-            'price' => $data->price,
+            'price' => $data->price ?? 0.0,
             'active' => $data->active,
         ]);
     }
@@ -25,7 +25,7 @@ class ProductService
             'name' => $data->name,
             'description' => $data->description,
             'category_id' => $data->category_id,
-            'price' => $data->price,
+            'price' => $data->price ?? 0.0,
             'active' => $data->active,
         ]);
         

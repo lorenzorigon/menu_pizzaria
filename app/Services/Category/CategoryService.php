@@ -27,6 +27,10 @@ class CategoryService
             'image' => $path,
             'position' => $position,
             'active' => $data->active,
+            'size' => $data->size,
+            'size_m' => $data->size_m,
+            'size_g' => $data->size_g,
+            'size_gg' => $data->size_gg,
         ]);
     }
 
@@ -48,6 +52,10 @@ class CategoryService
             'image'=> $newPath ?? $category->image,
             'active' => $data->active,
             'position' => $position,
+            'size' => $data->size,
+            'size_m' => $data->size_m,
+            'size_g' => $data->size_g,
+            'size_gg' => $data->size_gg,
         ]);
         
         return $category;
