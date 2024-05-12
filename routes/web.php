@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return view('web.home.index');
-});
+Route::get('/', [HomeController::class, 'index'])
+    ->name('index');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

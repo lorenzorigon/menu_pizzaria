@@ -1,1 +1,67 @@
 @import 'bootstrap/scss/bootstrap';
+
+$orange : #ec3700;
+
+// styles main
+.main-container{
+    min-height: 90vh;
+}
+
+.navbar{
+    justify-content: center;
+}
+
+.orange{
+    color: $orange;
+}
+
+.material-symbols-outlined, .fab{
+    font-size: 32px !important;
+    vertical-align: middle;
+}
+
+.myheader{
+    padding: 5px 30px;
+    background-color: black !important;
+    font-size: 24px;
+}
+
+#logo{
+    width: 220px;
+}
+
+.border-bottom{
+    border-bottom: 3px solid $orange !important;
+    border-radius: 3px;
+}
+
+.myfooter{
+    background-color: black !important;
+    color: white;
+}
+
+//cards de categorias
+.category{
+    color: white;
+    font-size: 40px;
+    height: 100px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.image-container {
+    height: 100px; /* Ajuste este valor conforme necessário */
+}
+
+.image-container img {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%);
+    object-position:center;
+}
+
+.nav-link{
+    color: white;
+}
