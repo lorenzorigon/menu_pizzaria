@@ -3,7 +3,7 @@
 @section('content')
     <main class="main-container">
         @foreach ($categories as $category)
-            <div class="category mt-3 container">
+            <div class="category mt-4 container">
                 <div class="row align-items-center">
                     <div class="col-6 image-container px-0">
                         <!-- Inserir a imagem aqui -->
@@ -17,15 +17,17 @@
             </div>
 
             @if ($category->size)
-                <div class="row text-center mt-3">
-                    <div class="col-4">
-                        {{ $category->size_m }}
-                    </div>
-                    <div class="col-4">
-                        {{ $category->size_g }}
-                    </div>
-                    <div class="col-4">
-                        {{ $category->size_gg }}
+                <div class="container">
+                    <div class="row text-center mt-3">
+                        <div class="col-4">
+                            <h2>M <button class="btn btn-primary">R$ {{ $category->size_m }} </button></h2>
+                        </div>
+                        <div class="col-4">
+                            {{ $category->size_g }}
+                        </div>
+                        <div class="col-4">
+                            {{ $category->size_gg }}
+                        </div>
                     </div>
                 </div>
             @endif
@@ -33,16 +35,22 @@
             <div class="container mt-3">
                 <div class="row mx-0 px-0">
                     @foreach ($category->products as $product)
-                        <div class="col-4">
+                        <div class="col-6 mt-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <h2 class="card-title">{{ $product->name }}</h2>
-                                    <p class="card-text">
-                                        {{ $product->description }}
-                                    </p>
-                                    @if(!$category->size)
-                                    <a style="float: right" class="btn btn-primary">R$ 20.00</a>
-                                    @endif
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h2 class="card-title">{{ $product->name }}</h2>
+                                            <p class="card-text">
+                                                {{ $product->description }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a class="btn btn-primary btn-block" style="height: 100%;">
+                                                R$ 20.00
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +61,7 @@
         @endforeach
     </main>
     {{-- footer --}}
-    <footer class="text-white bg-dark myfooter py-4">
+    <footer class="text-white bg-dark myfooter py-4 mt-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">

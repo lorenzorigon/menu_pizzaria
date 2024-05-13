@@ -79,14 +79,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+    $('#category').trigger('change');
     $('#category').change(function(){
+        console.log('change')
         var selectedCategorySize = $(this).children("option:selected").data('size');
         if(selectedCategorySize){
             $('#price-group').hide();
         } else {
             $('#price-group').show();
         }
-    });
+    }).triggerHandler('change');
 });
 </script>
 

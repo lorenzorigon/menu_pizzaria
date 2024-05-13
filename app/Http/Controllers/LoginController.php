@@ -17,8 +17,9 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('admin.categories.index');
         }
+
+        return redirect()->back()->with('error', 'Credenciais inválidas. Por favor, tente novamente.');
     }
 }

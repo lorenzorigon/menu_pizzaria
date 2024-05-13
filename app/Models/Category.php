@@ -33,6 +33,6 @@ class Category extends Model
 
     /**@property Collection<int, Product> $products*/
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class)->orderBy('name');
     }
 }
