@@ -19,37 +19,53 @@
             @if ($category->size)
                 <div class="container">
                     <div class="row text-center mt-3">
-                        <div class="col-4">
-                            <h2>M <button class="btn btn-primary">R$ {{ $category->size_m }} </button></h2>
+                        <div class="col-4 d-flex justify-content-center">
+                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
+                                <div class="valor-size">
+                                    <span class="size">M</span><span class="moeda-size">R$</span>{{$category->size_m}},00
+                                 </div>
+                            </h1>
                         </div>
-                        <div class="col-4">
-                            {{ $category->size_g }}
+                        <div class="col-4 d-flex justify-content-center">
+                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
+                                <div class="valor-size">
+                                    <span class="size">G</span><span class="moeda-size">R$</span>{{$category->size_g}},00
+                                 </div>
+                            </h1>
                         </div>
-                        <div class="col-4">
-                            {{ $category->size_gg }}
+                        <div class="col-4 d-flex justify-content-center">
+                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
+                                <div class="valor-size">
+                                    <span class="size">GG</span><span class="moeda-size">R$</span>{{$category->size_gg}},00
+                                 </div>
+                            </h1>
                         </div>
                     </div>
                 </div>
             @endif
 
-            <div class="container mt-3">
-                <div class="row mx-0 px-0">
+            <div class="container px-0 mt-3">
+                <div class="row">
                     @foreach ($category->products as $product)
                         <div class="col-6 mt-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <h2 class="card-title">{{ $product->name }}</h2>
-                                            <p class="card-text">
+                                            <h1 class="card-title">{{ $product->name }}</h1>
+                                            <h5 class="card-text">
                                                 {{ $product->description }}
-                                            </p>
+                                            </h5>
                                         </div>
+                                        @if($product->price)
                                         <div class="col-md-3">
-                                            <a class="btn btn-primary btn-block" style="height: 100%;">
-                                                R$ 20.00
-                                            </a>
+                                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
+                                                <div class="valor">
+                                                    <span class="moeda">R$</span>{{$product->price}},00
+                                                 </div>
+                                            </h1>
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

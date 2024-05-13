@@ -87,6 +87,52 @@ $orange : #ec3700;
     border-color: $orange;
 }
 
+btn-primary::selection{
+    background-color: $orange;
+    border-color: $orange;
+}
+
 .admin-card{
     height: 100% !important;
 }
+
+.btn-price{
+    cursor: default;
+    pointer-events: none;
+    height: 140px;
+    width: 130px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.valor {
+    padding-top: 1rem;
+    position: relative;
+    font-size: 38px;
+  }
+  
+  .moeda {
+    position: absolute;
+    top: -5px; 
+    font-size: 22px;
+  }
+
+  .valor-size {
+    padding-top: 3rem;
+    position: relative;
+    font-size: 38px;
+  }
+  
+  .moeda-size {
+    position: absolute;
+    top: 25px; 
+    font-size: 22px;
+  }
+
+  .size{
+    position: absolute;
+    top: -15px;
+    right: 5px;
+  }
