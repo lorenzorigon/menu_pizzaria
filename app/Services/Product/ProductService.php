@@ -19,9 +19,9 @@ class ProductService
         ]);
     }
 
-    public function update(ProductData $data, Product $Product) : Product
+    public function update(ProductData $data, Product $product) : Product
     {
-        Product::query()->update([
+        $product->update([
             'name' => $data->name,
             'description' => $data->description,
             'category_id' => $data->category_id,
@@ -29,6 +29,6 @@ class ProductService
             'active' => $data->active,
         ]);
         
-        return $Product;
+        return $product;
     }
 }

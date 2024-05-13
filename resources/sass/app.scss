@@ -2,6 +2,10 @@
 
 $orange : #ec3700;
 
+*{
+    font-family: 'Roboto';
+}
+
 // styles main
 .main-container{
     min-height: 90vh;
@@ -64,4 +68,21 @@ $orange : #ec3700;
 
 .nav-link{
     color: white;
+}
+
+.card{
+    border-radius: 15px;
+    box-shadow: 2px 8px 8px 2px rgba(0, 0, 0, 0.4);
+    height: 180px;
+}
+
+.btn-primary{
+    background-color: $orange;
+    border-color: $orange;
+    font-weight: bold;
+}
+
+.btn-primary:hover{
+    background-color: $orange;
+    border-color: $orange;
 }

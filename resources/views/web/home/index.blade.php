@@ -15,6 +15,41 @@
                     </div>
                 </div>
             </div>
+
+            @if ($category->size)
+                <div class="row text-center mt-3">
+                    <div class="col-4">
+                        {{ $category->size_m }}
+                    </div>
+                    <div class="col-4">
+                        {{ $category->size_g }}
+                    </div>
+                    <div class="col-4">
+                        {{ $category->size_gg }}
+                    </div>
+                </div>
+            @endif
+
+            <div class="container mt-3">
+                <div class="row mx-0 px-0">
+                    @foreach ($category->products as $product)
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ $product->name }}</h2>
+                                    <p class="card-text">
+                                        {{ $product->description }}
+                                    </p>
+                                    @if(!$category->size)
+                                    <a style="float: right" class="btn btn-primary">R$ 20.00</a>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repita as colunas para mais cartões -->
+                    @endforeach
+                </div>
+            </div>
         @endforeach
     </main>
     {{-- footer --}}
