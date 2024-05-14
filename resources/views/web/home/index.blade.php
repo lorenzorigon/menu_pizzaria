@@ -2,6 +2,9 @@
 
 @section('content')
     <main class="main-container">
+        <div class="w-100">
+            <img class="img-fluid" src="{{asset('img/banner.jpeg')}}" alt="">
+        </div>
         @foreach ($categories as $category)
             <div class="category mt-4 container">
                 <div class="row align-items-center">
@@ -39,7 +42,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-9">
+                                        <div class=" @if($product->price) col-md-9 @else col-md-12 @endif">
                                             <h1 class="card-title">{{ $product->name }}</h1>
                                             <h5 class="card-text">
                                                 {{ $product->description }}
