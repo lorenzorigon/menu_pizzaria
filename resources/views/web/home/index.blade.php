@@ -5,11 +5,11 @@
         @foreach ($categories as $category)
             <div class="category mt-4 container">
                 <div class="row align-items-center">
-                    <div class="col-6 image-container px-0">
+                    <div class="col image-container px-0">
                         <!-- Inserir a imagem aqui -->
                         <img src="{{ $category->image }}" class="img-fluid w-100" alt="{{ $category->name }}">
                     </div>
-                    <div class="col-6 text-white" style="padding-left: 3rem">
+                    <div class="col text-white" style="padding-left: 3rem">
                         <!-- Inserir o nome da categoria aqui -->
                         <h1>{{ $category->name }}</h>
                     </div>
@@ -17,37 +17,25 @@
             </div>
 
             @if ($category->size)
-                <div class="container">
-                    <div class="row text-center mt-3">
-                        <div class="col-4 d-flex justify-content-center">
-                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
-                                <div class="valor-size">
-                                    <span class="size">M</span><span class="moeda-size">R$</span>{{$category->size_m}},00
-                                 </div>
-                            </h1>
+            <div class="container mt-3">
+                <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-3 mt-1 container-size">
+                            <span class="size-btn">M</span><span> R$ {{$category->size_m}},00</span>
                         </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
-                                <div class="valor-size">
-                                    <span class="size">G</span><span class="moeda-size">R$</span>{{$category->size_g}},00
-                                 </div>
-                            </h1>
+                        <div class="col-sm-12 mt-1 col-md-3 container-size">
+                            <span class="size-btn">G</span><span> R$ {{$category->size_g}},00</span>
                         </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
-                                <div class="valor-size">
-                                    <span class="size">GG</span><span class="moeda-size">R$</span>{{$category->size_gg}},00
-                                 </div>
-                            </h1>
+                        <div class="col-sm-12 mt-1 col-md-3 container-size">
+                            <span class="size-btn">GG</span><span> R$ {{$category->size_gg}},00</span>
                         </div>
-                    </div>
                 </div>
+            </div>
             @endif
 
             <div class="container px-0 mt-3">
                 <div class="row">
                     @foreach ($category->products as $product)
-                        <div class="col-6 mt-3">
+                        <div class="col-sm-12 col-md-6 mt-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">

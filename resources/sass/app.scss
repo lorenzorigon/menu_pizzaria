@@ -3,7 +3,7 @@
 $orange : #ec3700;
 
 *{
-    font-family: 'Roboto';
+    font-family: 'poppins';
 }
 
 // styles main
@@ -105,6 +105,27 @@ btn-primary::selection{
     border-bottom-left-radius: 0px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+
+    @media (max-width: 767px) {
+        height: 60px;
+        position: absolute;
+        right: 5px;
+        bottom: -5px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        height: 60px;
+        position: absolute;
+        right: 5px;
+        bottom: -5px;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        height: 60px;
+        position: absolute;
+        right: 5px;
+        bottom: -5px;
+    }
 }
 
 .valor {
@@ -117,6 +138,22 @@ btn-primary::selection{
     position: absolute;
     top: -5px; 
     font-size: 22px;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+        top: 5px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 18px;
+        top: 5px;
+    }
+   
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 18px;
+        top: 5px;
+    }
+
   }
 
   .valor-size {
@@ -135,4 +172,42 @@ btn-primary::selection{
     position: absolute;
     top: -15px;
     right: 5px;
+  }
+
+  .container-size{
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 38px;
+    margin: 0 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 24px;
+    }
+   
+    @media (min-width: 992px) and (max-width: 1199px) {
+        font-size: 30px;
+    }
+  }
+
+  .size-btn{
+    background-color: $orange;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin-right: 0.5rem;
+    padding:0 5px;
   }
