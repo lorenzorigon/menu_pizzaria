@@ -221,4 +221,8 @@ btn-primary::selection{
   .card-text{
     position: relative;
     z-index: 999;
+
+    @media (max-width: 767px) {
+        font-size: 1rem;
+    }
   }

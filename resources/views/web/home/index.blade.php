@@ -38,7 +38,7 @@
             <div class="container px-0 mt-3">
                 <div class="row">
                     @foreach ($category->products as $product)
-                        <div class="col-sm-12 col-md-6 mt-3">
+                        <div class="col-md-12 col-lg-6 mt-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
