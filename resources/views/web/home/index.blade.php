@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="main-container">
-        <div class="w-100">
+        <div class="w-100 text-center">
             <img class="img-fluid" src="{{asset('img/banner.jpeg')}}" alt="">
         </div>
         @foreach ($categories as $category)
