@@ -35,7 +35,7 @@
             </div>
             @endif
 
-            <div class="container px-0 mt-3">
+            <div class="container mt-3">
                 <div class="row">
                     @foreach ($category->products as $product)
                         <div class="col-md-12 col-lg-6 mt-3">
@@ -67,6 +67,7 @@
             </div>
         @endforeach
     </main>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=5555996051548&text=Ola.%20gostaria%20de%20fazer%20um%20pedido!"><i class="flutuante fab fa-whatsapp"></i></a>
     {{-- footer --}}
     <footer class="text-white bg-dark myfooter py-4 mt-3">
         <div class="container">
@@ -83,12 +84,12 @@
                     <h6>Contato</h6>
                     <p><span class="orange material-symbols-outlined" style="font-size: 22px !important">pin_drop</span>
                         Capão do Cipó - RS</p>
-                    <p><i class="orange fab fa-whatsapp" style="font-size: 22px !important"></i>&nbsp; (+55) 9 9605-1548</p>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5555996051548&text=Ola.%20gostaria%20de%20fazer%20um%20pedido!" style="color:white; text-decoration: none"><i class="orange fab fa-whatsapp" style="font-size: 22px !important"></i>&nbsp; (+55) 9 9605-1548</a>
                 </div>
                 <div class="col-md-3">
                     <h6>Nossas redes</h6>
-                    <p><i class="orange fab fa-instagram" style="font-size: 22px !important"></i>&nbsp; @LancheriaRodrigues
-                    </p>
+                    <a style="text-decoration: none;color:white" target="_blank" href="https://www.instagram.com/pizzariaelancheriarodrigues/"><i class="orange fab fa-instagram" style="font-size: 22px !important"></i>&nbsp; @pizzariaelancheriarodrigues
+                    </a>
                 </div>
             </div>
 

@@ -226,3 +226,11 @@ btn-primary::selection{
         font-size: 1rem;
     }
   }
+
+  .flutuante{
+    position: fixed;
+    color: green;
+    bottom: 30px;
+    right: 30px;
+    font-size: 60px !important;
+  }
