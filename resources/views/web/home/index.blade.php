@@ -24,12 +24,18 @@
                 <div class="row justify-content-center">
                         <div class="col-sm-12 col-md-3 mt-1 container-size">
                             <span class="size-btn">M</span><span> R$ {{$category->size_m}},00</span>
+                            <br>
+                            <p class="dimension">&nbsp;({{$category->dimension_m}})</p>
                         </div>
                         <div class="col-sm-12 mt-1 col-md-3 container-size">
                             <span class="size-btn">G</span><span> R$ {{$category->size_g}},00</span>
+                            <br>
+                            <p class="dimension">&nbsp;({{$category->dimension_g}})</p>
                         </div>
                         <div class="col-sm-12 mt-1 col-md-3 container-size">
                             <span class="size-btn">GG</span><span> R$ {{$category->size_gg}},00</span>
+                            <br>
+                            <p class="dimension">&nbsp;({{$category->dimension_gg}})</p>
                         </div>
                 </div>
             </div>

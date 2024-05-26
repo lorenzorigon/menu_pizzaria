@@ -31,6 +31,9 @@ class CategoryService
             'size_m' => $data->size_m,
             'size_g' => $data->size_g,
             'size_gg' => $data->size_gg,
+            'dimension_m' => $data->dimension_m,
+            'dimension_g' => $data->dimension_g,
+            'dimension_gg' => $data->dimension_gg,
         ]);
     }
 
@@ -56,6 +59,9 @@ class CategoryService
             'size_m' => $data->size_m,
             'size_g' => $data->size_g,
             'size_gg' => $data->size_gg,
+            'dimension_m' => $data->dimension_m,
+            'dimension_g' => $data->dimension_g,
+            'dimension_gg' => $data->dimension_gg,
         ]);
         
         return $category;

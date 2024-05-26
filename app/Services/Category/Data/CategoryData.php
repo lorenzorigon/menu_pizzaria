@@ -16,6 +16,9 @@ class CategoryData
         public readonly ?float $size_m = null,
         public readonly ?float $size_g = null,
         public readonly ?float $size_gg = null,
+        public readonly ?string $dimension_m = null,
+        public readonly ?string $dimension_g = null,
+        public readonly ?string $dimension_gg = null,
     ) {
     }
 
@@ -32,6 +35,9 @@ class CategoryData
             size_m: $validated['size_m'] ?? null,
             size_g: $validated['size_g'] ?? null,
             size_gg: $validated['size_gg'] ?? null,
+            dimension_m: $validated['dimension_m'] ?? null,
+            dimension_g: $validated['dimension_g'] ?? null,
+            dimension_gg: $validated['dimension_gg'] ?? null,
         );
     }
 }

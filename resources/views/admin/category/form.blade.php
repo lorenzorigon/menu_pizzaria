@@ -76,21 +76,42 @@
                 @if (isset($category) && !$category->size) hidden @endif
             >
                 <div class="col-md-2">
-                    <label for="size_m" class="form-label">M</label>
+                    <label for="size_m" class="form-label">Valor M</label>
                     <input type="number" name="size_m" class="form-control" id="size_m"
                         value="{{ old('size_m', isset($category) ? $category->size_m : '') }}"
                     >
                 </div>
                 <div class="col-md-2">
-                    <label for="size_g" class="form-label">G</label>
+                    <label for="size_g" class="form-label">Valor G</label>
                     <input type="number" name="size_g" class="form-control" id="g"
                         value="{{ old('size_g', isset($category) ? $category->size_g : '') }}"    
                     >
                 </div>
                 <div class="col-md-2">
-                    <label for="size_gg" class="form-label">GG</label>
+                    <label for="size_gg" class="form-label">Valor GG</label>
                     <input type="number" name="size_gg" class="form-control" id="gg"
                         value="{{ old('size_gg', isset($category) ? $category->size_gg : '') }}"
+                    >
+                </div>
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-2">
+                    <label for="dimension_m" class="form-label">Tamanho M</label>
+                    <input type="text" name="dimension_m" class="form-control" id="dimension_m"
+                        value="{{ old('dimension_m', isset($category) ? $category->dimension_m : '') }}"
+                    >
+                </div>
+                <div class="col-md-2">
+                    <label for="dimension_g" class="form-label">Tamanho G</label>
+                    <input type="text" name="dimension_g" class="form-control" id="g"
+                        value="{{ old('dimension_g', isset($category) ? $category->dimension_g : '') }}"    
+                    >
+                </div>
+                <div class="col-md-2">
+                    <label for="dimension_gg" class="form-label"> Tamanho GG</label>
+                    <input type="text" name="dimension_gg" class="form-control" id="gg"
+                        value="{{ old('dimension_gg', isset($category) ? $category->dimension_gg : '') }}"
                     >
                 </div>
             </div>

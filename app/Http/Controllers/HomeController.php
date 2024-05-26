@@ -15,6 +15,7 @@ class HomeController extends Controller
             ->with('products', function($query){
                 $query->where('active', true);
             })
+            ->orderBy('position')
             ->get(); 
         
         return view('web.home.index', ['categories' => $categories]);

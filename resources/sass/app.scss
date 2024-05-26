@@ -183,27 +183,44 @@ btn-primary::selection{
     height: 100px;
     background-color: black;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 32px;
+    padding: 10px;
     margin: 0 15px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
 
+    .dimension{
+        font-size: 22px;
+    }
+
     @media (max-width: 767px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 18px;
+        .dimension{
+            font-size: 14px;
+        }
     }
 
     @media (min-width: 768px) and (max-width: 991px) {
-        font-size: 24px;
+        font-size: 18px;
+        padding-top: 20px;
+        .dimension{
+            padding-top: 10px;
+            font-size: 14px;
+        }
     }
    
     @media (min-width: 992px) and (max-width: 1199px) {
         font-size: 30px;
+        .dimension{
+            font-size: 20px;
+        }
     }
   }
 

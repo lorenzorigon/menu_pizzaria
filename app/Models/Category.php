@@ -15,6 +15,9 @@ use Illuminate\Http\UploadedFile;
  * @property float $size_m
  * @property float $size_g
  * @property float $size_gg
+ * @property string $dimension_m
+ * @property string $dimension_g
+ * @property string $dimension_gg
  */
 class Category extends Model
 {
@@ -28,7 +31,10 @@ class Category extends Model
         "size",
         "size_m",
         "size_g",
-        "size_gg"
+        "size_gg",
+        "dimension_m",
+        "dimension_g",
+        "dimension_gg",
     ];
 
     /**@property Collection<int, Product> $products*/

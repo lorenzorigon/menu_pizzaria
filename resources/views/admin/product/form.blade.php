@@ -64,7 +64,7 @@
             @enderror
             <div class="form-check mt-3">
                 <input type="hidden" name="active" value="0">
-                <input class="form-check-input" type="checkbox" id="active" name="active" value="1" checked>
+                <input class="form-check-input" type="checkbox" id="active" name="active" value="1" @empty($product) checked @endempty @if(isset($product) && $product->active) checked @endif>
                 <label class="form-check-label" for="active">Ativo</label>
                 @error('active')
                     <div class="alert alert-danger">{{ $message }}</div>

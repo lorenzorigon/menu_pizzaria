@@ -32,6 +32,9 @@ class CategoryRequest extends FormRequest
             'size_m' => 'required_if:size,true',
             'size_g' => 'required_if:size,true',
             'size_gg' => 'required_if:size,true',
+            'dimension_m' => 'required_if:size,true',
+            'dimension_g' => 'required_if:size,true',
+            'dimension_gg' => 'required_if:size,true',
         ];
     }
 
