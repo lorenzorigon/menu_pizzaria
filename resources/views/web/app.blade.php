@@ -22,14 +22,14 @@
 {{-- header --}}
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark myheader">
-        <a class="navbar-brand" href="#"><img id="logo" src="{{ asset('img/logo.jpg') }}" alt=""></a>
+        <a class="navbar-brand"><img id="logo" src="{{ asset('img/logo.jpg') }}" alt=""></a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav d-flex justify-content-between w-100 px-5">
                 <li class="nav-item active border-bottom">
-                    <a class="nav-link" href="#">Cardápio</a>
+                    <a class="nav-link">Cardápio</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="orange fab fa-whatsapp"></i> &nbsp; (55) 9
+                    <a class="nav-link"><i class="orange fab fa-whatsapp"></i> &nbsp; (55) 9
                         9605-1548</a>
                 </li>
                 <!-- Adicione mais itens de navegação aqui -->

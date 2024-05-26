@@ -6,9 +6,9 @@
             <img class="img-fluid" src="{{asset('img/banner.jpeg')}}" alt="">
         </div>
         @foreach ($categories as $category)
-            <div class="category mt-4 container">
-                <div class="row align-items-center">
-                    <div class="col image-container px-0">
+            <div class="mt-4 px-4 container">
+                <div class="category row align-items-center">
+                    <div class="col px-0 image-container">
                         <!-- Inserir a imagem aqui -->
                         <img src="{{ $category->image }}" class="img-fluid w-100" alt="{{ $category->name }}">
                     </div>
@@ -20,22 +20,22 @@
             </div>
 
             @if ($category->size)
-            <div class="container mt-3">
+            <div class="px-4 container mt-3">
                 <div class="row justify-content-center">
                         <div class="col-sm-12 col-md-3 mt-1 container-size">
                             <span class="size-btn">M</span><span> R$ {{$category->size_m}},00</span>
                             <br>
-                            <p class="dimension">&nbsp;({{$category->dimension_m}})</p>
+                            <p class="dimension my-0">&nbsp;&nbsp;({{$category->dimension_m}})</p>
                         </div>
                         <div class="col-sm-12 mt-1 col-md-3 container-size">
                             <span class="size-btn">G</span><span> R$ {{$category->size_g}},00</span>
                             <br>
-                            <p class="dimension">&nbsp;({{$category->dimension_g}})</p>
+                            <p class="dimension my-0">&nbsp;&nbsp;({{$category->dimension_g}})</p>
                         </div>
                         <div class="col-sm-12 mt-1 col-md-3 container-size">
                             <span class="size-btn">GG</span><span> R$ {{$category->size_gg}},00</span>
                             <br>
-                            <p class="dimension">&nbsp;({{$category->dimension_gg}})</p>
+                            <p class="dimension my-0">&nbsp;&nbsp; ({{$category->dimension_gg}})</p>
                         </div>
                 </div>
             </div>
