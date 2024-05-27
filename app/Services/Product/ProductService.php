@@ -15,6 +15,7 @@ class ProductService
             'description' => $data->description,
             'category_id' => $data->category_id,
             'price' => $data->price ?? 0.0,
+            'second_price' => $data->second_price ?? 0.0,
             'active' => $data->active,
         ]);
     }
@@ -26,6 +27,7 @@ class ProductService
             'description' => $data->description,
             'category_id' => $data->category_id,
             'price' => $data->price ?? 0.0,
+            'second_price' => $data->second_price ?? 0.0,
             'active' => $data->active,
         ]);
         

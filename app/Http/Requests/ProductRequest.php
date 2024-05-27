@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
             'name' => 'required',
             'description' => 'required',
             'price' => 'sometimes',
+            'second_price' => 'sometimes',
             'category_id' => 'required',
             'active' => 'required|boolean',
         ];

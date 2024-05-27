@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property boolean $active
  * @property float $price
+ * @property float $second_price
  * @property int $categpry_id
  */
 class Product extends Model
@@ -22,6 +23,7 @@ class Product extends Model
         "active",
         "category_id",
         "price",
+        "second_price",
     ];
 
     /** @var Category */

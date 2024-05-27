@@ -48,18 +48,37 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class=" @if($product->price) col-md-9 @else col-md-12 @endif">
+                                        <div class=" @if($product->price && !$product->second_price) col-md-9 @else col-md-12 @endif">
                                             <h1 class="card-title">{{ $product->name }}</h1>
                                             <h5 class="card-text">
                                                 {{ $product->description }}
                                             </h5>
                                         </div>
-                                        @if($product->price)
+                                        @if($product->second_price)
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex">
+                                                <h1 class="btn btn-primary second-price d-flex align-items-center justify-content-center">
+                                                    <span class="size-price">M</span>
+                                                    <div class="second-valor">
+                                                        <span class="second-moeda">R$</span>{{$product->price}},00
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                            <div>
+                                                <h1 class="btn btn-primary second-price d-flex align-items-center justify-content-center">
+                                                    <span class="size-price">G</span>
+                                                    <div class="second-valor">
+                                                        <span class="second-moeda">R$</span>{{$product->second_price}},00
+                                                    </div>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        @elseif($product->price)
                                         <div class="col-md-3">
                                             <h1 class="btn btn-primary btn-price d-flex align-items-center justify-content-center">
                                                 <div class="valor">
                                                     <span class="moeda">R$</span>{{$product->price}},00
-                                                 </div>
+                                                </div>
                                             </h1>
                                         </div>
                                         @endif

@@ -96,6 +96,25 @@ btn-primary::selection{
     height: 100% !important;
 }
 
+.size-price{
+    font-size: 42px;
+    padding-right: 20px;
+    padding-top: 15px;
+}
+
+.second-price{
+    cursor: default;
+    pointer-events: none;
+    height: 60px;
+    width: 200px;
+    position: relative;
+    bottom: -1.3rem;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
 .btn-price{
     cursor: default;
     pointer-events: none;
@@ -131,6 +150,18 @@ btn-primary::selection{
         position: absolute;
         right: 10px;
     }
+}
+
+.second-valor{
+    padding-top: 1rem;
+    position: relative;
+    font-size: 38px;
+}
+
+.second-moeda{
+    font-size: 18px;
+    position: absolute;
+    top: 5px; 
 }
 
 .valor {

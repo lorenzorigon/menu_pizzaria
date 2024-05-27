@@ -45,6 +45,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $dto = ProductData::fromRequest($request);
+
         $this->productService->update($dto, $product);
 
         return redirect()->route("admin.products.index");

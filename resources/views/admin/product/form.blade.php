@@ -62,6 +62,16 @@
             @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+
+            <div id="second-price-group" class="form-group mt-3">
+                <label for="price">Preço 2</label>
+                <div class="input-group w-25 mb-3">
+                    <input type="number" class="form-control" name="second_price"
+                        value="{{ old('second_price', isset($product) ? $product->second_price : '') }}">
+                    <span class="input-group-text">,00</span>
+                </div>
+            </div>
+
             <div class="form-check mt-3">
                 <input type="hidden" name="active" value="0">
                 <input class="form-check-input" type="checkbox" id="active" name="active" value="1" @empty($product) checked @endempty @if(isset($product) && $product->active) checked @endif>
