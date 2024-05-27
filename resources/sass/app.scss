@@ -100,6 +100,11 @@ btn-primary::selection{
     font-size: 42px;
     padding-right: 20px;
     padding-top: 15px;
+
+    @media (max-width: 767px) {
+        font-size: 36px;
+        padding-right: 10px;
+    }
 }
 
 .second-price{
@@ -113,6 +118,19 @@ btn-primary::selection{
     border-bottom-left-radius: 0px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+
+    @media (max-width: 767px) {
+        width: 120px;
+        bottom: -2rem;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+       bottom: -1rem;
+    }
+
+    @media (min-width: 1400px) {
+        bottom: -1rem;
+    }
 }
 
 .btn-price{
@@ -156,12 +174,20 @@ btn-primary::selection{
     padding-top: 1rem;
     position: relative;
     font-size: 38px;
+
+    @media (max-width: 767px) {
+        font-size: 22px;
+    }
 }
 
 .second-moeda{
     font-size: 18px;
     position: absolute;
     top: 5px; 
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
 }
 
 .valor {
